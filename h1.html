@@ -3,19 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Converter</title>
+    <title>Advanced Time Converter</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>12-hour to 24-hour Time Converter</h1>
+        <h1>Advanced Time Converter</h1>
+        <div class="live-clock">
+            <h2>Current Time</h2>
+            <p id="liveTime12">12-hour format: <span id="time12"></span></p>
+            <p id="liveTime24">24-hour format: <span id="time24"></span></p>
+        </div>
         <form id="timeForm">
-            <label for="timeInput">Enter time (HH:MM:SSAM/PM):</label>
-            <input type="text" id="timeInput" placeholder="12:01:00PM" required>
+            <label for="timeInput">Enter time (HH:MM:SS AM/PM):</label>
+            <input type="text" id="timeInput" placeholder="12:01:00 PM" required>
+            <label for="timeZone">Select Time Zone:</label>
+            <select id="timeZone"></select>
             <button type="submit">Convert</button>
         </form>
         <div id="result"></div>
+        <div id="error" class="error-message"></div>
+        <button id="toggleTheme">Toggle Dark Mode</button>
+        <button id="clearHistory">Clear History</button>
+        <h2>Conversion History</h2>
+        <ul id="historyList"></ul>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
+
